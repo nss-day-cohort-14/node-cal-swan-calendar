@@ -9,7 +9,6 @@
   "scripts": {
     "test": "mocha",
     "coverage": "istanbul cover _mocha"
-
   },
   "repository": {
     "type": "git",
@@ -23,5 +22,9 @@
   "homepage": "https://github.com/nss-day-cohort-14/node-cal-swan-calendar#readme",
   "devDependencies": {
     "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
   }
 }
