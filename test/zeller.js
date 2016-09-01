@@ -2,6 +2,12 @@ let assert = require('chai').assert
 let zeller = require("../lib/zeller")
 
 describe("zeller",()=>{
+	it("should be a function",()=>{
+		assert.isFunction(zeller);
+	})
+	it("should handle missing arguments",()=>{
+		assert.strictEqual(zeller(),"Please enter a complete date")
+	})
 	it("should return a number representing day of the week",()=>{
 		assert.strictEqual(zeller(8,30,2016), 2)
 	})
@@ -34,5 +40,3 @@ describe("zeller",()=>{
 	})
 
 })
-
-//test for when arguments are missing
