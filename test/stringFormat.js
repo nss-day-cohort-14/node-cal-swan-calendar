@@ -1,7 +1,7 @@
-let {isFunction,strictEqual,isArray} = require('chai').assert
+let {isFunction,strictEqual,isArray, equal, deepEqual} = require('chai').assert
 let {getMonths,getMonth,getDays,
 	getDay,getMonthLengths,getDaysInMonth,
-	dayTrimmer,addPadding}=require('../lib/stringFormat');
+	dayTrimmer,centerString, addPadding, getRange}=require('../lib/stringFormat');
 
 describe('getMonths',()=>{
 	it("should be a function",()=>{
@@ -55,14 +55,45 @@ describe('dayTrimmer',()=>{
 	})
 })
 
-describe('addPadding',()=>{
+describe('#centerString()',()=>{
 	it("should be a function",()=>{
-		isFunction(addPadding)
+		isFunction(centerString)
 	})
 	it("should add padding to a string based on width",()=>{
-		strictEqual(addPadding("foo",5)," foo ");
+		strictEqual(centerString("foo",5)," foo ");
 	})
 	it("should be left Leaning",()=>{
-		strictEqual(addPadding("foo",6)," foo  ");
+		strictEqual(centerString("foo",6)," foo  ");
+	})
+})
+
+describe('#addPadding()', () => {
+	const testString = 'Hello from space'
+		,      padding = 5
+		,         side = 'left'
+
+	it('should be a function', () => {
+		strictEqual(typeof addPadding, 'function')
+	})
+	it('should take 3 arguments', () => {
+		strictEqual(addPadding.length, 3)
+	})
+	it('should return a string', () => {
+		strictEqual(typeof addPadding(testString, padding, side), 'string')
+	})
+	it('should add correct amount of padding', () => {
+		strictEqual(addPadding(testString, padding, side), '     Hello from space')
+	})
+})
+
+describe('#getRange()',()=>{
+	it("should be a function",()=>{
+		isFunction(getRange)
+	})
+	it("should return an array",()=>{
+		isArray(getRange(10))
+	})
+	it("should contain all ints up to passed argument",()=>{
+		deepEqual(getRange(5), [1,2,3,4,5])
 	})
 })

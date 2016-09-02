@@ -47,6 +47,14 @@ describe('cal', () => {
 				strictEqual('object', typeof getToday)
   		})
 
+  		it.skip('should accept a single argument corresponding to month', () => {
+				strictEqual()
+  		})
+
+  		it.skip('should accept 2 arguments corresponding to a month and year', () => {
+				strictEqual()
+  		})
+
   	})
   })
 

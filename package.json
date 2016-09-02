@@ -1,6 +1,7 @@
 {
-  "name": "node-cal-swan-calendar",
+  "name": "node-cal",
   "version": "1.0.0",
+  "bin": "./bin/node-cal",
   "description": "",
   "main": "index.js",
   "directories": {
